@@ -901,6 +901,26 @@
         .page.active {
             display: block;
         }
+
+        .update-log {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.update-log h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.update-log ul {
+    margin-left: 20px;
+    color: #666;
+}
+
+.update-log li {
+    margin-bottom: 8px;
+}
         
         @keyframes fadeIn {
             from {
@@ -959,7 +979,8 @@
                     </div>
                 </div>
             </section>
-
+<li><a href="#" id="updates-link">Updates</a></li>
+            <li><a href="#" id="footer-updates-link">Update Logs</a></li>
             <!-- About Section -->
             <section class="section" id="about">
                 <div class="section-title">
@@ -1235,7 +1256,46 @@
             </div>
         </section>
     </main>
-
+<!-- Updates Page -->
+<section id="updates" class="page">
+    <div class="section" style="padding-top: 150px;">
+        <div class="section-title">
+            <h2>Update Logs</h2>
+            <p>Recent changes and improvements to our experience</p>
+        </div>
+        <div class="about-text">
+            <div class="update-log">
+                <h3>Version 2.1.0 - June 2023</h3>
+                <ul>
+                    <li>Added new Airbus A350-1000 aircraft model</li>
+                    <li>Implemented improved flight physics</li>
+                    <li>Expanded Hamad International Airport with new terminals</li>
+                    <li>Fixed various bugs reported by the community</li>
+                </ul>
+            </div>
+            
+            <div class="update-log">
+                <h3>Version 2.0.0 - April 2023</h3>
+                <ul>
+                    <li>Complete UI redesign</li>
+                    <li>Added Boeing 787 Dreamliner to the fleet</li>
+                    <li>New interactive tutorial system</li>
+                    <li>Improved multiplayer synchronization</li>
+                </ul>
+            </div>
+            
+            <div class="update-log">
+                <h3>Version 1.5.0 - February 2023</h3>
+                <ul>
+                    <li>Added cabin crew interactions</li>
+                    <li>Implemented weather system</li>
+                    <li>New achievement system with rewards</li>
+                    <li>Performance optimizations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="footer-container">
