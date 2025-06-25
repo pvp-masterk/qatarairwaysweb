@@ -49,7 +49,7 @@
     }
     .hero {
       padding: 100px 20px;
-      background: url('https://www.qatarairways.com/content/dam/images/renditions/horizontal-1/qa-aircraft-exterior.jpg') center/cover no-repeat;
+      background: url('https://content.presspage.com/uploads/2431/qatarairways-767715.jpg?10000') center/cover no-repeat;
       color: white;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
       animation: zoomIn 2s ease-in-out;
@@ -69,16 +69,39 @@
       from { transform: scale(1.1); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 2s ease;
+    }
+    .img-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .img-section img {
+      width: 300px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .img-section img:hover {
+      transform: scale(1.05);
+    }
     footer {
       background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       text-align: center;
       font-size: 0.9rem;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      animation: fadeIn 2s ease;
+    .highlight {
+      background-color: rgba(255, 204, 0, 0.1);
+      padding: 30px;
+      margin: 20px auto;
+      border-radius: 20px;
+      border: 1px solid #ffcc00;
     }
   </style>
 </head>
@@ -88,6 +111,8 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#updates">Update Logs</a>
+      <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
       <a href="#terms">Terms</a>
       <a href="#privacy">Privacy</a>
     </nav>
@@ -95,28 +120,45 @@
 
   <section class="hero" id="home">
     <h2>Welcome to Qatar Airways Roblox</h2>
-    <p>Experience premium virtual aviation in Roblox, powered by the prestige of Qatar Airways.</p>
+    <p>Experience luxury aviation and immersive roleplay in Roblox with our premium Qatar Airways simulation.</p>
+  </section>
+
+  <section id="features" class="container highlight">
+    <h2>Game Features</h2>
+    <p>✓ Realistic aircraft interiors and airport terminals</p>
+    <p>✓ Fully animated check-in, boarding, and flight services</p>
+    <p>✓ Staff ranks and uniforms with interactive roles</p>
+    <p>✓ Custom-designed Qatar Airways aircraft livery</p>
+  </section>
+
+  <section id="gallery" class="container">
+    <h2>Gallery</h2>
+    <div class="img-section">
+      <img src="https://content.presspage.com/uploads/2431/aircraft-qatar.jpg?10000" alt="Qatar Airways Plane">
+      <img src="https://content.presspage.com/uploads/2431/1000_airbus-a350-business-class.jpg?10000" alt="First Class Interior">
+      <img src="https://content.presspage.com/uploads/2431/luxurylounge.jpg?10000" alt="Qatar Airways Lounge">
+    </div>
   </section>
 
   <section id="updates" class="container">
     <h2>Update Logs</h2>
-    <p>June 2025: New lounge update with animated check-in kiosks and realistic flight animations.</p>
-    <p>May 2025: Introduced first-class cabin interior and crew simulation.</p>
-    <p>April 2025: Security system overhaul and improved roleplay features.</p>
+    <p>🟣 June 2025: New lounge area, animated kiosks, realistic sounds added</p>
+    <p>🟣 May 2025: First-Class cabin revamp, crew AI update</p>
+    <p>🟣 April 2025: Enhanced flight system, dynamic weather added</p>
   </section>
 
   <section id="terms" class="container">
     <h2>Terms of Use</h2>
-    <p>By accessing this experience, you agree not to exploit game systems, impersonate staff, or disrupt the roleplay environment. Violations may lead to bans.</p>
+    <p>By accessing this experience, you agree to follow Roblox rules and respect the roleplay atmosphere. Griefing, trolling, or unauthorized staff impersonation will result in disciplinary action.</p>
   </section>
 
   <section id="privacy" class="container">
     <h2>Privacy Policy</h2>
-    <p>We do not collect any personal data. All gameplay activity remains within the Roblox platform and is subject to their privacy policy.</p>
+    <p>This game does not store or track personal information. All actions and data are managed under Roblox’s official platform guidelines.</p>
   </section>
 
   <footer>
-    &copy; 2025 Qatar Airways Roblox. This is a fan project and not affiliated with the real Qatar Airways.
+    &copy; 2025 Qatar Airways Roblox. This is a fan-made experience and is not officially affiliated with Qatar Airways.
   </footer>
 </body>
 </html>
