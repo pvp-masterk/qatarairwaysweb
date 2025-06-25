@@ -37,39 +37,122 @@
         html {
             scroll-behavior: smooth;
         }
-
-        /* Preloader */
+        /* Qatar Airways Themed Preloader */
         .preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary);
+            background: linear-gradient(135deg, #5B0D25 0%, #8D1B3D 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.8s ease;
         }
 
         .preloader.fade-out {
             opacity: 0;
         }
 
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--light);
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
+        .qatar-loader {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
         }
 
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
+        .qatar-logo img {
+            width: 200px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .runway {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .runway-stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.5) 20px,
+                rgba(255, 255, 255, 0.5) 40px
+            );
+            animation: runwayStripes 1s linear infinite;
+        }
+
+        .airplane {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M22,16.21V18l-8-2.14V18l-2.51,0.54L8,13.35V16l-2.57,1.4L3.5,15.5l1.93-1.93L3.5,11.6l1.93-1.93L3.5,7.79l1.43-1.43L8,8V10.65l3.49-5.19L14,8V5.86L6,3.84V5.79l-2.57-1.4L1.5,5.79l1.93,1.93L1.5,9.65l1.93,1.93L1.5,13.5l1.43,1.43L6,12.21V10.65l8,8V14l6,1.5Z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(-20px);
+            animation: airplaneTakeoff 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+            z-index: 2;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #FFFFFF 0%, #E3AFBC 100%);
+            animation: progressLoad 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes airplaneTakeoff {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(420px); }
+        }
+
+        @keyframes runwayStripes {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-40px); }
+        }
+
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            70% { width: 100%; }
+            100% { width: 100%; }
         }
 
         /* Navigation */
@@ -915,11 +998,21 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
+ <div class="preloader">
+        <div class="qatar-loader">
+            <div class="qatar-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/1200px-Qatar_Airways_Logo.svg.png" alt="Qatar Airways Logo">
+            </div>
+            <div class="runway">
+                <div class="airplane"></div>
+                <div class="runway-stripes"></div>
+            </div>
+            <div class="loading-text">Preparing Your Flight Experience</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
     </div>
-
     <!-- Navigation -->
     <header id="header">
         <div class="logo">
@@ -1039,7 +1132,7 @@
                 </div>
                 <div class="gallery-container">
                     <div class="gallery-item animate-on-scroll">
-                        <img src="https://th.bing.com/th?id=OIF.d5S2DnEbYPM48N1f%2f94evw&rs=1&pid=ImgDetMain" alt="Qatar Airways Aircraft">
+                        <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Qatar Airways Aircraft">
                         <div class="gallery-overlay">
                             <h3>Qatar Airways Fleet</h3>
                             <p>Our detailed aircraft models</p>
@@ -1599,6 +1692,7 @@
                 this.reset();
             });
         }
+        
     </script>
 </body>
 </html>
