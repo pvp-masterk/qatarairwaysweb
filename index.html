@@ -1980,4 +1980,28 @@
         
         function loadRobloxData() {
             // Simulate loading Roblox group data
-            document.getElementById('group-members').textContent = '5,000
+            document.getElementById('group-members').textContent = '5,000+';
+            document.getElementById('group-rank').textContent = '100+';
+            document.getElementById('group-visits').textContent = '1M+';
+            
+            // In a real implementation, you would fetch this from Roblox API
+            // Example: fetch('https://api.roblox.com/groups/1234567')
+        }
+        
+        // Initialize Roblox integration
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePlayerCount();
+            loadRobloxData();
+            
+            // Add Roblox game link with tracking
+            const playButtons = document.querySelectorAll('#play-now-btn, .roblox-widget .btn');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Track click event (in a real implementation, you would use analytics)
+                    console.log('Roblox game link clicked');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
